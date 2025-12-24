@@ -346,7 +346,7 @@ function placeDottedPath(svg, pathStr, numDots) {
         dot.setAttribute("cx", pt.x);
         dot.setAttribute("cy", pt.y);
         dot.setAttribute("r", dotRadius);
-        dot.setAttribute("fill", "red"); // default color red
+        dot.setAttribute("fill", "gold"); // default color red
         svg.appendChild(dot);
         dots.push(dot);
     }
@@ -379,7 +379,7 @@ function drawMaskedOverlay(svg, pathStr, w, h) {
     svg.appendChild(overlayRect);
 }
 
-function animateDots(dots, duration = animationDuration, colorOn = 'green', colorOff = 'red', onComplete) {
+function animateDots(dots, duration = animationDuration, colorOn = 'green', colorOff = '#ffe600ff', onComplete) {
     if (animationFrameId) cancelAnimationFrame(animationFrameId);
     let start = null;
     function step(ts) {
@@ -425,7 +425,7 @@ function setupOverlayFace() {
     const pathStr = veryFaceLikePath(w, h);
     drawMaskedOverlay(svg, pathStr, w, h);
     const dots = placeDottedPath(svg, pathStr, isMobileDevice ? 180 : 250);
-    dots.forEach(dot => dot.setAttribute('fill', 'red'));
+    dots.forEach(dot => dot.setAttribute('fill', 'gold'));
 
     console.log('Overlay setup complete:', { w, h, isMobile: isMobileDevice });
 }
@@ -496,20 +496,20 @@ function initializeImageUpload() {
     // Drag and drop
     uploadArea.addEventListener('dragover', (e) => {
         e.preventDefault();
-        uploadArea.style.borderColor = '#d00008';
-        uploadArea.style.background = '#fff5f5';
+        uploadArea.style.borderColor = '#ffee00ff';
+        uploadArea.style.background = '#fffef5ff';
     });
 
     uploadArea.addEventListener('dragleave', (e) => {
         e.preventDefault();
-        uploadArea.style.borderColor = '#b00006';
-        uploadArea.style.background = 'white';
+        uploadArea.style.borderColor = '#ffee00ff';
+        uploadArea.style.background = '#fffef5ff';
     });
 
     uploadArea.addEventListener('drop', (e) => {
         e.preventDefault();
-        uploadArea.style.borderColor = '#b00006';
-        uploadArea.style.background = 'white';
+        uploadArea.style.borderColor = '#ffee00ff';
+        uploadArea.style.background = '#fffef5ff';
 
         const files = e.dataTransfer.files;
         if (files.length > 0) {
@@ -978,7 +978,7 @@ function showResult(message, customerPhoto = null, uploadedPhoto = null, matchin
     overlay.style.left = 0;
     overlay.style.width = '100vw';
     overlay.style.height = '100vh';
-    overlay.style.backgroundColor = 'rgba(0,0,0,0.7)';
+    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
     overlay.style.display = 'flex';
     overlay.style.justifyContent = 'center';
     overlay.style.alignItems = 'center';
@@ -989,7 +989,7 @@ function showResult(message, customerPhoto = null, uploadedPhoto = null, matchin
     modal.style.background = '#fff';
     modal.style.padding = '30px 40px';
     modal.style.borderRadius = '12px';
-    modal.style.boxShadow = '0 8px 24px rgba(0,0,0,0.2)';
+    modal.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.2)';
     modal.style.textAlign = 'center';
     modal.style.maxWidth = '500px';
     modal.style.width = '90vw';
@@ -1048,7 +1048,7 @@ function showResult(message, customerPhoto = null, uploadedPhoto = null, matchin
             score.style.fontSize = '20px';
             score.style.fontWeight = '700';
             score.style.marginBottom = '20px';
-            score.style.color = parseFloat(matchingScore) >= 80 ? '#25bf6c' : '#b00006';
+            score.style.color = parseFloat(matchingScore) >= 80 ? '#25bf6c' : '#ffee00ff';
             modal.appendChild(score);
         }
     }
@@ -1185,7 +1185,7 @@ async function analyzeFrame() {
                         isMobileDevice ? 180 : 250
                     );
 
-                    animateDots(dots, animationDuration, 'green', 'red', async () => {
+                    animateDots(dots, animationDuration, 'green', 'gold', async () => {
                         if (onPage == 1 && !isFrameCaptureAborted) {
                             uploading = true;
                             await processFaceMatch();
@@ -1205,7 +1205,7 @@ async function analyzeFrame() {
                     }
                     const svg = document.getElementById('oval-svg');
                     const dots = placeDottedPath(svg, veryFaceLikePath(svg.clientWidth, svg.clientHeight), isMobileDevice ? 180 : 250);
-                    dots.forEach(dot => dot.setAttribute('fill', 'red'));
+                    dots.forEach(dot => dot.setAttribute('fill', 'gold'));
                 }
             }
         }
