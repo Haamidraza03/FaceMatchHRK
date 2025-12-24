@@ -15,8 +15,9 @@
 		<div class="tab-section">
 			<button id="customer-photo-btn" style="display: none;" class="tab-btn selected"></button>
 		</div>
-		<button id="mobile-guidelines-btn" class="mobile-guidelines-btn" aria-haspopup="dialog" aria-controls="mobile-guidelines-overlay">Capture Guidelines</button>
-		
+		<button id="mobile-guidelines-btn" class="mobile-guidelines-btn" aria-haspopup="dialog"
+			aria-controls="mobile-guidelines-overlay">Capture Guidelines</button>
+
 		<!-- Image Upload Section -->
 		<div id="upload-section" class="upload-section">
 			<div class="upload-container">
@@ -24,7 +25,8 @@
 				<div class="upload-area" id="uploadArea">
 					<input type="file" id="imageUpload" accept="image/*" style="display: none;">
 					<div class="upload-placeholder" id="uploadPlaceholder">
-						<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+						<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+							stroke-width="2">
 							<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
 							<polyline points="17 8 12 3 7 8"></polyline>
 							<line x1="12" y1="3" x2="12" y2="15"></line>
@@ -39,12 +41,12 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<!-- Split Content Container -->
 		<div id="content-container" style="margin-top: 30px;">
 			<!-- Left Panel: Toggle Controls, Checklist, Video, Overlay, Capture -->
 			<div id="left-panel">
-				
+
 				<div id="rules-container">
 					<ul id="checklist" class="checklist">
 						<li data-rule-index="0">
@@ -76,39 +78,45 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<!-- Right Panel: Instructions -->
 			<div id="right-panel">
 				<div class="instructions-container">
-					<h3 style="color: black; margin-bottom: 1.5rem; font-family: Calibri; text-align: center;">Capture Guidelines</h3>
+					<h3 style="color: black; margin-bottom: 1.5rem; font-family: Calibri; text-align: center;">Capture
+						Guidelines</h3>
 					<ul id="instructions" class="instructions">
 						<li data-guideline-index="0">
 							<strong>Eyes Open:</strong> Keep your eyes open
 						</li>
 						<li data-guideline-index="1">
-							<strong>Single Face:</strong> Please ensure no one is around you, just show your face in camera
+							<strong>Single Face:</strong> Please ensure no one is around you, just show your face in
+							camera
 						</li>
 						<li data-guideline-index="2">
-							<strong>Straight Face:</strong> Don't tilt your head, keep your face straight pointing to the camera
+							<strong>Straight Face:</strong> Don't tilt your head, keep your face straight pointing to
+							the camera
 						</li>
 						<li data-guideline-index="3">
-							<strong>Face inside frame:</strong> Keep your face inside the red oval seen on the screen in the left layout
+							<strong>Face inside frame:</strong> Keep your face inside the red oval seen on the screen in
+							the left layout
 						</li>
 					</ul>
 				</div>
 			</div>
 		</div>
-		
+
 		<!-- Mobile Guidelines Overlay -->
-		<div id="mobile-guidelines-overlay" class="mobile-guidelines-overlay" role="dialog" aria-modal="true" aria-hidden="true" style="display:none;">
+		<div id="mobile-guidelines-overlay" class="mobile-guidelines-overlay" role="dialog" aria-modal="true"
+			aria-hidden="true" style="display:none;">
 			<div class="guidelines-panel">
-				<button id="mobile-guidelines-close" class="guidelines-close" aria-label="Close guidelines">&times;</button>
+				<button id="mobile-guidelines-close" class="guidelines-close"
+					aria-label="Close guidelines">&times;</button>
 				<div class="guidelines-body" id="mobile-guidelines-body">
 					<!-- right-panel content will be injected here on mobile -->
 				</div>
 			</div>
 		</div>
-		
+
 	</div>
 	<div id="progress-dialog" class="progress-dialog" style="display: none;">
 		<div class="dialog-content">
@@ -117,140 +125,146 @@
 		</div>
 	</div>
 
-<style>
-/* Upload Section Styles */
-.upload-section {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    background: #f8f9fa;
-}
+	<style>
+		/* Upload Section Styles */
+		.upload-section {
+			display: flex;
+			justify-content: center;
+			padding: 20px;
+			background: #f8f9fa;
+		}
 
-.upload-container {
-    max-width: 470px;
-    width: 100%;
-	padding: 20px;
-}
+		.upload-container {
+			max-width: 470px;
+			width: 100%;
+			padding: 20px;
+		}
 
-.upload-container h3 {
-    text-align: center;
-    font-family: Calibri, sans-serif;
-    color: #333;
-    margin-bottom: 15px;
-    font-size: 1.2em;
-}
+		.upload-container h3 {
+			text-align: center;
+			font-family: Calibri, sans-serif;
+			color: #333;
+			margin-bottom: 15px;
+			font-size: 1.2em;
+		}
 
-.upload-area {
-    position: relative;
-    width: 100%;
-    min-height: 200px;
-    border: 3px dashed #b00006;
-    border-radius: 12px;
-    background: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
+		.upload-area {
+			position: relative;
+			width: 100%;
+			min-height: 200px;
+			border: 3px dashed #b00006;
+			border-radius: 12px;
+			background: white;
+			cursor: pointer;
+			transition: all 0.3s ease;
+		}
 
-.upload-area:hover {
-    border-color: #d00008;
-    background: #fff5f5;
-}
+		.upload-area:hover {
+			border-color: #d00008;
+			background: #fff5f5;
+		}
 
-.upload-placeholder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 200px;
-    color: #666;
-    text-align: center;
-    padding: 20px;
-}
+		.upload-placeholder {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 200px;
+			color: #666;
+			text-align: center;
+			padding: 20px;
+		}
 
-.upload-placeholder svg {
-    color: #b00006;
-    margin-bottom: 15px;
-}
+		.upload-placeholder svg {
+			color: #b00006;
+			margin-bottom: 15px;
+		}
 
-.upload-placeholder p {
-    font-size: 1.1em;
-    font-weight: 600;
-    margin: 10px 0 5px 0;
-    font-family: Calibri, sans-serif;
-}
+		.upload-placeholder p {
+			font-size: 1.1em;
+			font-weight: 600;
+			margin: 10px 0 5px 0;
+			font-family: Calibri, sans-serif;
+		}
 
-.upload-placeholder span {
-    font-size: 0.9em;
-    color: #999;
-}
+		.upload-placeholder span {
+			font-size: 0.9em;
+			color: #999;
+		}
 
-.upload-preview {
-    position: relative;
-    width: 100%;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-}
+		.upload-preview {
+			position: relative;
+			width: 100%;
+			height: 200px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 10px;
+		}
 
-.upload-preview img {
-    max-width: 100%;
-    max-height: 180px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    object-fit: contain;
-}
+		.upload-preview img {
+			max-width: 100%;
+			max-height: 180px;
+			border-radius: 8px;
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+			object-fit: contain;
+		}
 
-.remove-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: #b00006;
-    color: white;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s;
-    z-index: 10;
-}
+		.remove-btn {
+			position: absolute;
+			top: 15px;
+			right: 15px;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			background: #b00006;
+			color: white;
+			border: none;
+			font-size: 20px;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: background 0.2s;
+			z-index: 10;
+		}
 
-.remove-btn:hover {
-    background: #900005;
-}
+		.remove-btn:hover {
+			background: #900005;
+		}
 
-@media (max-width: 768px) {
-    .upload-section {
-        padding: 15px 10px;
-    }
-    
-    .upload-container h3 {
-        font-size: 1em;
-    }
-    
-    .upload-area {
-        min-height: 150px;
-    }
-    
-    .upload-placeholder {
-        height: 150px;
-    }
-    
-    .upload-preview {
-        height: 150px;
-    }
-    
-    .upload-preview img {
-        max-height: 130px;
-    }
-}
-</style>
+		@media (max-width: 768px) {
+			.upload-section {
+				padding: 15px 10px;
+			}
+
+			.upload-container h3 {
+				font-size: 1em;
+			}
+
+			.upload-area {
+				min-height: 150px;
+			}
+
+			.upload-placeholder {
+				height: 150px;
+			}
+
+			.upload-preview {
+				height: 150px;
+			}
+
+			.upload-preview img {
+				max-height: 130px;
+			}
+		}
+	</style>
+
+	<script>
+		document.addEventListener('contextmenu', function (e) {
+			e.preventDefault();
+		});
+	</script>
 
 </body>
 
