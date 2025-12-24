@@ -1212,21 +1212,7 @@ async function analyzeFrame() {
     }
 }
 
-function isInIndia(lat, lon) {
-    return lat >= 6.5 && lat <= 37.6 && lon >= 68.7 && lon <= 97.25;
-}
 
-navigator.geolocation.getCurrentPosition(
-    (pos) => {
-        const { latitude, longitude } = pos.coords;
-        if (isInIndia(latitude, longitude)) {
-            showToast("User is located in India", 3000);
-        } else {
-            showToast("User is NOT located in India", 5000);
-        }
-    },
-    (err) => showToast("Location error: " + err.message, 10000)
-);
 
 const analysisInterval = isMobileDevice ? 400 : 300;
 // START analysis interval using stored timer so we can clear it in stopCamera
