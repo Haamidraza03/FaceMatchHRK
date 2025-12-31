@@ -131,7 +131,7 @@ document.getElementById('customer-photo-btn').addEventListener('click', async fu
     document.getElementById('rules-container').style.display = 'block';
     document.getElementById('face-overlay').style.display = 'block';
     onPage = 1;
-    video.style.transform = 'translate(-50%, -50%) scaleX(-1) scale(1.5)';
+    video.style.transform = 'translate(-50%, -50%) scaleX(-1) scale(1)';
     await startCamera('user');
 
     setTimeout(() => {
