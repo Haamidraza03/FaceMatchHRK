@@ -1048,7 +1048,7 @@ function showResult(message, customerPhoto = null, uploadedPhoto = null, matchin
             score.style.fontSize = '20px';
             score.style.fontWeight = '700';
             score.style.marginBottom = '20px';
-            score.style.color = parseFloat(matchingScore) >= 80 ? '#25bf6c' : '#ffee00ff';
+            score.style.color = parseFloat(matchingScore) >= 80 ? '#25bf6c' : '#ff0000ff';
             modal.appendChild(score);
         }
     }
